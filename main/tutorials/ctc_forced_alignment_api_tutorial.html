@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CTC forced alignment API tutorial &mdash; Torchaudio 2.1.0.dev20230524 documentation</title>
+  <title>CTC forced alignment API tutorial &mdash; Torchaudio 2.1.0.dev20230525 documentation</title>
   
 
   
@@ -213,7 +213,7 @@
           <div class="pytorch-left-menu-search">
             
     <div class="version">
-      <a href="../../versions.html"><span style="font-size:110%">2.1.0.dev20230524 &#x25BC</span></a>
+      <a href="../../versions.html"><span style="font-size:110%">2.1.0.dev20230525 &#x25BC</span></a>
     </div>
     
 
@@ -261,6 +261,7 @@
 <li class="toctree-l1"><a class="reference internal" href="streamreader_advanced_tutorial.html">StreamReader Advanced Usages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamwriter_basic_tutorial.html">StreamWriter Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streamwriter_advanced.html">StreamWriter Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hw_acceleration_tutorial.html">GPU video decoder/encoder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="effector_tutorial.html">AudioEffector Usages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="audio_resampling_tutorial.html">Audio Resampling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="audio_data_augmentation_tutorial.html">Audio Data Augmentation</a></li>
@@ -477,8 +478,8 @@ alignment generation algorithm (without using an API) described in the
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Audio</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.1.0.dev20230523
-2.1.0.dev20230524
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>2.1.0.dev20230525
+2.1.0.dev20230525
 cuda
 </pre></div>
 </div>
@@ -1168,58 +1169,56 @@ targets.</p>
 </pre></div>
 </div>
 <img src="../_images/sphx_glr_ctc_forced_alignment_api_tutorial_004.png" srcset="../_images/sphx_glr_ctc_forced_alignment_api_tutorial_004.png" alt="ctc forced alignment api tutorial" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>  0%|          | 0.00/1.18G [00:00&lt;?, ?B/s]
-  2%|1         | 21.5M/1.18G [00:00&lt;00:05, 225MB/s]
-  4%|3         | 43.0M/1.18G [00:00&lt;00:05, 224MB/s]
-  5%|5         | 64.4M/1.18G [00:00&lt;00:05, 213MB/s]
-  7%|7         | 89.6M/1.18G [00:00&lt;00:05, 233MB/s]
- 10%|9         | 115M/1.18G [00:00&lt;00:04, 245MB/s]
- 12%|#1        | 139M/1.18G [00:00&lt;00:04, 246MB/s]
- 13%|#3        | 162M/1.18G [00:00&lt;00:04, 247MB/s]
- 16%|#5        | 190M/1.18G [00:00&lt;00:04, 260MB/s]
- 18%|#8        | 218M/1.18G [00:00&lt;00:03, 270MB/s]
- 20%|##        | 245M/1.18G [00:01&lt;00:03, 275MB/s]
- 23%|##2       | 271M/1.18G [00:01&lt;00:03, 272MB/s]
- 25%|##4       | 297M/1.18G [00:01&lt;00:03, 269MB/s]
- 27%|##6       | 324M/1.18G [00:01&lt;00:03, 271MB/s]
- 29%|##9       | 350M/1.18G [00:01&lt;00:03, 273MB/s]
- 31%|###1      | 376M/1.18G [00:01&lt;00:03, 259MB/s]
- 33%|###3      | 401M/1.18G [00:01&lt;00:03, 259MB/s]
- 35%|###5      | 427M/1.18G [00:01&lt;00:03, 261MB/s]
- 38%|###7      | 453M/1.18G [00:01&lt;00:02, 265MB/s]
- 40%|###9      | 478M/1.18G [00:01&lt;00:02, 263MB/s]
- 42%|####1     | 503M/1.18G [00:02&lt;00:02, 250MB/s]
- 44%|####3     | 528M/1.18G [00:02&lt;00:02, 252MB/s]
- 46%|####5     | 552M/1.18G [00:02&lt;00:02, 251MB/s]
- 48%|####7     | 577M/1.18G [00:02&lt;00:02, 252MB/s]
- 50%|####9     | 601M/1.18G [00:02&lt;00:02, 248MB/s]
- 52%|#####1    | 626M/1.18G [00:02&lt;00:02, 249MB/s]
- 54%|#####3    | 649M/1.18G [00:02&lt;00:02, 247MB/s]
- 56%|#####6    | 675M/1.18G [00:02&lt;00:02, 254MB/s]
- 58%|#####8    | 700M/1.18G [00:02&lt;00:02, 257MB/s]
- 60%|######    | 725M/1.18G [00:02&lt;00:01, 257MB/s]
- 62%|######2   | 749M/1.18G [00:03&lt;00:01, 246MB/s]
- 64%|######4   | 773M/1.18G [00:03&lt;00:01, 239MB/s]
- 66%|######6   | 799M/1.18G [00:03&lt;00:01, 248MB/s]
- 68%|######8   | 822M/1.18G [00:03&lt;00:01, 236MB/s]
- 70%|#######   | 847M/1.18G [00:03&lt;00:01, 243MB/s]
- 72%|#######2  | 871M/1.18G [00:03&lt;00:01, 246MB/s]
- 74%|#######4  | 895M/1.18G [00:03&lt;00:01, 245MB/s]
- 76%|#######6  | 918M/1.18G [00:03&lt;00:01, 229MB/s]
- 78%|#######8  | 940M/1.18G [00:03&lt;00:01, 230MB/s]
- 80%|#######9  | 962M/1.18G [00:04&lt;00:01, 223MB/s]
- 82%|########1 | 985M/1.18G [00:04&lt;00:01, 226MB/s]
- 84%|########3 | 0.98G/1.18G [00:04&lt;00:00, 227MB/s]
- 85%|########5 | 1.00G/1.18G [00:04&lt;00:00, 227MB/s]
- 88%|########7 | 1.03G/1.18G [00:04&lt;00:00, 237MB/s]
- 90%|########9 | 1.05G/1.18G [00:04&lt;00:00, 243MB/s]
- 92%|#########1| 1.08G/1.18G [00:04&lt;00:00, 252MB/s]
- 94%|#########3| 1.10G/1.18G [00:04&lt;00:00, 256MB/s]
- 96%|#########5| 1.13G/1.18G [00:04&lt;00:00, 257MB/s]
- 98%|#########8| 1.15G/1.18G [00:04&lt;00:00, 261MB/s]
-100%|##########| 1.18G/1.18G [00:05&lt;00:00, 250MB/s]
+  2%|2         | 24.3M/1.18G [00:00&lt;00:04, 250MB/s]
+  4%|4         | 51.2M/1.18G [00:00&lt;00:04, 268MB/s]
+  6%|6         | 76.8M/1.18G [00:00&lt;00:04, 237MB/s]
+  8%|8         | 101M/1.18G [00:00&lt;00:04, 244MB/s]
+ 11%|#         | 129M/1.18G [00:00&lt;00:04, 259MB/s]
+ 13%|#2        | 154M/1.18G [00:00&lt;00:04, 259MB/s]
+ 15%|#5        | 181M/1.18G [00:00&lt;00:03, 269MB/s]
+ 17%|#7        | 207M/1.18G [00:00&lt;00:04, 252MB/s]
+ 19%|#9        | 233M/1.18G [00:00&lt;00:03, 258MB/s]
+ 21%|##1       | 259M/1.18G [00:01&lt;00:03, 262MB/s]
+ 24%|##3       | 286M/1.18G [00:01&lt;00:03, 271MB/s]
+ 26%|##5       | 312M/1.18G [00:01&lt;00:03, 267MB/s]
+ 28%|##8       | 338M/1.18G [00:01&lt;00:03, 266MB/s]
+ 30%|###       | 364M/1.18G [00:01&lt;00:03, 269MB/s]
+ 32%|###2      | 390M/1.18G [00:01&lt;00:03, 266MB/s]
+ 35%|###4      | 416M/1.18G [00:01&lt;00:03, 262MB/s]
+ 37%|###6      | 441M/1.18G [00:01&lt;00:03, 257MB/s]
+ 39%|###8      | 466M/1.18G [00:01&lt;00:02, 259MB/s]
+ 41%|####      | 491M/1.18G [00:01&lt;00:02, 254MB/s]
+ 43%|####3     | 518M/1.18G [00:02&lt;00:02, 265MB/s]
+ 46%|####5     | 548M/1.18G [00:02&lt;00:02, 277MB/s]
+ 48%|####7     | 574M/1.18G [00:02&lt;00:02, 278MB/s]
+ 50%|####9     | 601M/1.18G [00:02&lt;00:02, 266MB/s]
+ 52%|#####2    | 627M/1.18G [00:02&lt;00:02, 264MB/s]
+ 54%|#####4    | 652M/1.18G [00:02&lt;00:02, 263MB/s]
+ 56%|#####6    | 677M/1.18G [00:02&lt;00:02, 248MB/s]
+ 58%|#####8    | 701M/1.18G [00:02&lt;00:02, 245MB/s]
+ 60%|######    | 725M/1.18G [00:02&lt;00:02, 248MB/s]
+ 62%|######2   | 749M/1.18G [00:03&lt;00:01, 245MB/s]
+ 64%|######4   | 773M/1.18G [00:03&lt;00:01, 235MB/s]
+ 66%|######6   | 795M/1.18G [00:03&lt;00:01, 232MB/s]
+ 68%|######8   | 820M/1.18G [00:03&lt;00:01, 242MB/s]
+ 70%|#######   | 846M/1.18G [00:03&lt;00:01, 249MB/s]
+ 72%|#######2  | 870M/1.18G [00:03&lt;00:01, 251MB/s]
+ 74%|#######4  | 894M/1.18G [00:03&lt;00:01, 246MB/s]
+ 76%|#######6  | 919M/1.18G [00:03&lt;00:01, 250MB/s]
+ 78%|#######8  | 944M/1.18G [00:03&lt;00:01, 254MB/s]
+ 81%|########  | 969M/1.18G [00:03&lt;00:00, 256MB/s]
+ 83%|########2 | 995M/1.18G [00:04&lt;00:00, 260MB/s]
+ 85%|########4 | 1.00G/1.18G [00:04&lt;00:00, 266MB/s]
+ 87%|########6 | 1.02G/1.18G [00:04&lt;00:00, 260MB/s]
+ 89%|########9 | 1.05G/1.18G [00:04&lt;00:00, 264MB/s]
+ 91%|#########1| 1.08G/1.18G [00:04&lt;00:00, 272MB/s]
+ 94%|#########3| 1.10G/1.18G [00:04&lt;00:00, 275MB/s]
+ 96%|#########6| 1.13G/1.18G [00:04&lt;00:00, 280MB/s]
+ 98%|#########8| 1.16G/1.18G [00:04&lt;00:00, 282MB/s]
+100%|##########| 1.18G/1.18G [00:04&lt;00:00, 261MB/s]
 
   0%|          | 0.00/140k [00:00&lt;?, ?B/s]
-100%|##########| 140k/140k [00:00&lt;00:00, 86.7MB/s]
+100%|##########| 140k/140k [00:00&lt;00:00, 28.0MB/s]
 </pre></div>
 </div>
 </section>
@@ -1275,7 +1274,7 @@ transcription errors exist.</p>
 Ni</a> for working on the forced aligner API, and <a class="reference external" href="mailto:moto&#37;&#52;&#48;meta&#46;com">Moto
 Hira</a> for providing alignment merging and
 visualization utilities.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.410 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.285 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-ctc-forced-alignment-api-tutorial-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/fd312a07c77ccd892cb337379bf91f16/ctc_forced_alignment_api_tutorial.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">ctc_forced_alignment_api_tutorial.py</span></code></a></p>

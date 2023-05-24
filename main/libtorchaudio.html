@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>libtorchaudio &mdash; Torchaudio 2.1.0.dev20230524 documentation</title>
+  <title>libtorchaudio &mdash; Torchaudio 2.1.0.dev20230525 documentation</title>
   
 
   
@@ -213,7 +213,7 @@
           <div class="pytorch-left-menu-search">
             
     <div class="version">
-      <a href="../versions.html"><span style="font-size:110%">2.1.0.dev20230524 &#x25BC</span></a>
+      <a href="../versions.html"><span style="font-size:110%">2.1.0.dev20230525 &#x25BC</span></a>
     </div>
     
 
@@ -261,6 +261,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorials/streamreader_advanced_tutorial.html">StreamReader Advanced Usages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/streamwriter_basic_tutorial.html">StreamWriter Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/streamwriter_advanced.html">StreamWriter Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hw_acceleration_tutorial.html">GPU video decoder/encoder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/effector_tutorial.html">AudioEffector Usages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/audio_resampling_tutorial.html">Audio Resampling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/audio_data_augmentation_tutorial.html">Audio Data Augmentation</a></li>
@@ -419,7 +420,11 @@ API/ABI backward compatibility is not guaranteed.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="libtorchaudio.stream_reader.html">torchaudio::io::StreamReader</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="libtorchaudio.stream_reader.html#constructors">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libtorchaudio.stream_reader.html#constructors">Constructors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_reader.html#streamreader">StreamReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_reader.html#streamreadercustomio">StreamReaderCustomIO</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="libtorchaudio.stream_reader.html#query-methods">Query Methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_reader.html#find-best-audio-stream">find_best_audio_stream</a></li>
 <li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_reader.html#find-best-video-stream">find_best_video_stream</a></li>
@@ -456,7 +461,11 @@ API/ABI backward compatibility is not guaranteed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="libtorchaudio.stream_writer.html">torchaudio::io::StreamWriter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="libtorchaudio.stream_writer.html#constructors">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libtorchaudio.stream_writer.html#constructors">Constructors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_writer.html#streamwriter">StreamWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_writer.html#streamwritercustomio">StreamWriterCustomIO</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="libtorchaudio.stream_writer.html#config-methods">Config methods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_writer.html#add-audio-stream">add_audio_stream</a></li>
 <li class="toctree-l3"><a class="reference internal" href="libtorchaudio.stream_writer.html#add-video-stream">add_video_stream</a></li>
